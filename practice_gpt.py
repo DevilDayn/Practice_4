@@ -8,6 +8,8 @@ data = json.loads(jsonl_str)
 
 q = data["q"]
 
+a_0 = "Iron-Nickel"
+
 c1 = data["v"][0]["c"]
 a1 = data["v"][0]["a"]
 c2 = data["v"][1]["c"]
@@ -20,7 +22,7 @@ j = data["j"]
 #----------------------------ChatGPT----------------------------
 client = OpenAI(
             base_url="https://models.inference.ai.azure.com",
-            api_key="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",
+            api_key="",
             )
 response_one = client.chat.completions.create(
             messages=[
@@ -66,6 +68,7 @@ response_one = client.chat.completions.create(
                 {
                     "role": "user",
                     "content": f"""Вопрос {q}
+Ответ без контекста: {a_0}
 Ответ 1: {a1} с Контекстом: {c1}
 Ответ 2: {a2} с Контекстом: {c2}"""
                 }

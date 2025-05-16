@@ -17,7 +17,7 @@ print(q, c1, a1, c2, a2)
 #----------------------------Deepseek----------------------------
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",
+    api_key="",
     )
 response = client.chat.completions.create(
             messages=[
